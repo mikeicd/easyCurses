@@ -1,16 +1,16 @@
 # easyCurses
  O easyCurses foi desenvolvido para facilitar a criação de menus gráficos utilizando-se da biblioteca NCurses.
  
- *Ela funciona somente em Sistemas Linux e deve ter o ncurses instalado. *
+ **Ela funciona somente em Sistemas Linux e deve ter o ncurses instalado.**
  
- *Quando se é utilizado o ncurses não é possivel debugar o programa utilizando o CLion.*
+ **Quando se é utilizado o ncurses não é possivel debugar o programa utilizando o CLion.**
  
- *Não funciona no terminal do CLion*
+ **Não funciona no terminal do CLion**
  
  
- Por enquanto ele possui 4 funções.
+ Por enquanto ele possui 4 funções:
  
- int criarTela(int linhas, int colunas);
+ int criarTela(int linhas, int colunas)
  Na qual é usada para iniciar uma tela com os parametros passados que determinam sua seu tamanho, na criação é feita uma verificação do 
  tamanha maximo que o terminal suporta, então deve-se ajustar o tamanho do terminal antes de executar o programa.
  
