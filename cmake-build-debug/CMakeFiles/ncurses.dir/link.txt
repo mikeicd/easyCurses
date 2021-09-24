@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/ncurses.dir/main.c.o CMakeFiles/ncurses.dir/easyCurses.c.o -o ncurses  -lcurses /usr/lib/x86_64-linux-gnu/libform.so 
