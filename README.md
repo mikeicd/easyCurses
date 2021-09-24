@@ -21,4 +21,4 @@ int removeChar(int x, int y);
 Utilizado para remover um caractere da posição x,y que é passada como parametro.
 
 int adicionaMatriz(int linhas, int colunas,char matriz[linhas][colunas]);
-Se utiliza de uma matriz de caracteres para adicionalos todos de uma vez a tela.
+Se utiliza de uma matriz de caracteres para adicionar todos de uma vez a tela.
