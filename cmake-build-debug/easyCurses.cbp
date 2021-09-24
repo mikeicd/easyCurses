@@ -85,9 +85,6 @@
 		<Unit filename="/home/mike/CLionProjects/easyCurses/main.c">
 			<Option target="easyCurses"/>
 		</Unit>
-		<Unit filename="/home/mike/CLionProjects/easyCurses/teste.cpp">
-			<Option target="easyCurses"/>
-		</Unit>
 		<Unit filename="/home/mike/CLionProjects/easyCurses/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
