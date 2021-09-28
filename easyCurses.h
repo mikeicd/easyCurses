@@ -16,6 +16,7 @@ extern int criarTela(int linhas, int colunas);
 extern int adicionaChar(int x, int y, char add);
 extern int removeChar(int x, int y);
 extern int adicionaMatriz(int linhas, int colunas,char matriz[linhas][colunas]);
+extern int criarMenuTela(int numOpcoes, char opcoes[numOpcoes]);
 
 
 #endif //NCURSES_EASYCURSES_H

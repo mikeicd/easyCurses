@@ -5,6 +5,7 @@
 #include "easyCurses.h"
 
 WINDOW *tela;
+WINDOW *menuTela;
 
 int mensagemErro(char *str){
 
@@ -41,13 +42,13 @@ int criarTela(int linhas, int colunas) {
     getmaxyx(stdscr,yM,xM);
 
     if (linhas > 0.70*yM || colunas > xM || linhas < 1  || colunas < 1){
-        mvwprintw(stdscr,0,0,"Erro ao criar uma tela. Numero de linhas ou colunas invalido.\nAperte quaquer tecla para continuar.");
+        mvwprintw(stdscr,0,0,"Erro ao criar uma tela. Nao foi possivel criar a tela devido ao tamanho do terminal, tente maximizar o terminal.\nAperte quaquer tecla para sair.");
         getch();
         endwin();
         exit(EXIT_FAILURE);
     }
 
-    tela = newwin(linhas+2, colunas+2 , 2, (xM - colunas+2)/2);
+    tela = newwin(linhas+2, colunas+2 , 2, 2);
     refresh();
 
     box(tela,0,0);
@@ -86,5 +87,19 @@ int adicionaMatriz(int x, int y, char matriz[x][y]){
         }
     }
     return 0;
+}
+
+int criarMenuTela(int numOpcoes, char opcoes[numOpcoes]){
+    int yM,xM;
+    getmaxyx(stdscr,yM,xM);
+
+    menuTela = newwin((int)(yM*0.25) , (int)(xM*0.7) , (int)(yM*0.3)+1, 2);
+    refresh();
+
+    box(menuTela,0,0);
+    wrefresh(tela);
+
+    return 0;
+
 }
 

@@ -31,7 +31,9 @@ int main() {
 
     removeChar(2,1);
 
+    getch();
 
+    criarMenuTela(2,"oi");
 
     getch();
 
