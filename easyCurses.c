@@ -12,11 +12,11 @@ int mensagemErro(char *str){
     mvwprintw(stdscr,0,0,str);
     getch();
 
-    int yA, xA;            // to store where you are
-    getyx(stdscr, yA, xA); // save current pos
-    move(0, 0);          // move to begining of line
-    clrtoeol();          // clear line
-    move(yA, xA);          // move back to where you were
+    int yA, xA;                     // to store where you are
+    getyx(stdscr, yA, xA);          // save current pos
+    move(0, 0);               // move to begining of line
+    clrtoeol();                     // clear line
+    move(yA, xA);                   // move back to where you were
 
     return 0;
 }
@@ -60,10 +60,7 @@ int criarTela(int linhas, int colunas) {
 int adicionaChar(int x, int y, char add) {
 
     if (verificaPosTela(x,y) == 1) return 1;
-
-    char c[1] = {add};
-
-    mvwprintw(tela, y+1, x+1, c);
+    mvwaddch(tela, y+1, x+1, add);
     wrefresh(tela);
     refresh();
     return 0;
@@ -73,7 +70,7 @@ int adicionaChar(int x, int y, char add) {
 int removeChar(int x,int y) {
 
     if (verificaPosTela(x,y) == 1) return 1;
-    mvwprintw(tela, y+1, x+1, " ");
+    mvwaddch(tela, y+1, x+1, ' ');
     wrefresh(tela);
     refresh();
     return 0;
