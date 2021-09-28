@@ -3,9 +3,9 @@
  
  **Ela funciona somente em Sistemas Linux e deve ter o ncurses instalado.**
  
- **Quando se é utilizado o ncurses não é possivel debugar o programa utilizando o CLion.**
+ **Utilizado o ncurses não é possivel debugar o programa utilizando o CLion.**
  
- **Não funciona no terminal do CLion**
+ **Não funciona executando(Run/Play) no CLion, porém é possivel utilizar o terminal do CLion**
  
  
  Por enquanto ele possui 4 funções:
