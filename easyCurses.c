@@ -48,7 +48,7 @@ int criarTela(int linhas, int colunas) {
         exit(EXIT_FAILURE);
     }
 
-    tela = newwin(linhas+2, colunas+2 , 2, 2);
+    tela = newwin(linhas+2, colunas+2 , 2, (xM - colunas+2)/2);
     refresh();
 
     box(tela,0,0);
@@ -90,11 +90,11 @@ int criarMenuTela(int numOpcoes, char opcoes[numOpcoes]){
     int yM,xM;
     getmaxyx(stdscr,yM,xM);
 
-    menuTela = newwin((int)(yM*0.25) , (int)(xM*0.7) , (int)(yM*0.3)+1, 2);
+    menuTela = newwin((int)(yM*0.25) , (int)(xM*0.7) , (int)(yM*0.75)+1, (xM - (int)(xM*0.7))/2);
     refresh();
 
     box(menuTela,0,0);
-    wrefresh(tela);
+    wrefresh(menuTela);
 
     return 0;
 

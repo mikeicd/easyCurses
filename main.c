@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "easyCurses.h"
 #include <ncurses.h>
 
@@ -8,7 +7,7 @@ int main() {
     cbreak();
     noecho();
 
-    criarTela(5,5);
+    criarTela(5,10);
 
     adicionaChar(0,0,'$');
     adicionaChar(1,1,'$');
