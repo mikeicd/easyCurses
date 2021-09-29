@@ -7,7 +7,7 @@ int main() {
     cbreak();
     noecho();
 
-    criarTela(5,10);
+    criarTela(5,5);
 
     adicionaChar(0,0,'$');
     adicionaChar(1,1,'$');
@@ -32,7 +32,9 @@ int main() {
 
     getch();
 
-    criarMenuTela(2,"oi");
+    char options[2][10] = {"Hello", "World"};
+
+    criarMenuTela(2,10,options);
 
     getch();
 

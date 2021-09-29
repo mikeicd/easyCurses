@@ -86,17 +86,49 @@ int adicionaMatriz(int x, int y, char matriz[x][y]){
     return 0;
 }
 
-int criarMenuTela(int numOpcoes, char opcoes[numOpcoes]){
-    int yM,xM;
+int criarMenuTela(int numOpcoes,int numCaracteres, char opcoes[numOpcoes][numCaracteres]){
+    int yM,xM, escolha, selecionado = 0;
     getmaxyx(stdscr,yM,xM);
 
     menuTela = newwin((int)(yM*0.25) , (int)(xM*0.7) , (int)(yM*0.75)+1, (xM - (int)(xM*0.7))/2);
     refresh();
-
+    keypad(menuTela, TRUE);
+    move(0,0);
     box(menuTela,0,0);
-    wrefresh(menuTela);
 
-    return 0;
 
+    while (1){
+        for (int i = 0; i < numOpcoes; ++i) {
+            if (selecionado == i)
+                wattron(menuTela, A_REVERSE);
+            mvwprintw(menuTela, i+1, 1, opcoes[i]);
+            wattroff(menuTela, A_REVERSE);
+        }
+        wrefresh(menuTela);
+
+        escolha = wgetch(menuTela);
+        switch (escolha) {
+            case KEY_UP:
+                selecionado--;
+                if (selecionado == -1)
+                    selecionado = numOpcoes - 1;
+                break;
+            case KEY_DOWN:
+                selecionado++;
+                if (selecionado == numOpcoes)
+                    selecionado = 0;
+                break;
+            case 'x':
+                delwin(menuTela);
+                refresh();
+                return -1;
+            case 10:
+                delwin(menuTela);
+                refresh();
+                return selecionado;
+            default:
+                break;
+        }
+    }
 }
 
