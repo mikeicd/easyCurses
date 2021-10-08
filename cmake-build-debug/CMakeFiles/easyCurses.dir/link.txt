@@ -1,1 +1,0 @@
-/usr/bin/cc -g CMakeFiles/easyCurses.dir/main.c.o CMakeFiles/easyCurses.dir/easyCurses.c.o -o easyCurses  -lcurses /usr/lib/x86_64-linux-gnu/libform.so 
